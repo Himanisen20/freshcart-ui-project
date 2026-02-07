@@ -17,12 +17,12 @@ function DashNav() {
 
       <ul className="menu">
 
+        <Link to="/Dashboard">
         <li className="active">
-          <FaHome />
-          <Link to="/Dashboard">
-          <span>Dashboard</span>
+            <FaHome />
+         <span>Dashboard</span>
+         </li>
           </Link>
-        </li>
 
         <p className="menu-title">Store Managements</p>
 

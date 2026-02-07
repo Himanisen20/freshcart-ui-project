@@ -1,9 +1,9 @@
 /* ===== BASE ===== */
 .navbar {
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
+
 }
+
 
 .nav-container {
   max-width: 1200px;
@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   gap: 14px;
-
   flex-wrap: nowrap;
   white-space: nowrap;
 
@@ -21,7 +20,7 @@
   overflow-y: visible;
 
   position: relative;
-  z-index: 50;
+  z-index: 999;
 }
 
 /* hide horizontal scrollbar */
@@ -42,7 +41,7 @@
   align-items: center;
   gap: 6px;
   padding: 10px 14px;
-  background: #10b981;
+  background: var(--green-main);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -54,7 +53,7 @@
 .departments-menu {
   display: none;
   position: absolute;
-  background: white;
+  background:var( --bg-body);
   border: 1px solid #ddd;
   z-index: 1000;
 }

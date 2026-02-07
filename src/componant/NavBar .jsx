@@ -13,7 +13,7 @@ export default function NavBar() {
     `nav-link ${isActive ? "nav-link-active" : ""}`;
 
   return (
-    <div className="navbar">
+    <div className="navbar main-nav">
       <div className="nav-container">
         {/* LEFT: All Departments */}
         <div className="departments">

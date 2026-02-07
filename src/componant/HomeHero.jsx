@@ -3,7 +3,7 @@ import '../css/HomeHero.css';
 
 const HomeHero = () => {
   return (
-    <section className="hero">
+    <section className="hero main-home">
       <div className="hero-content">
         <div className="hero-text">
           <span className="hero-badge">Free Shipping - orders over $100</span>
