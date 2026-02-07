@@ -1,0 +1,16 @@
+
+.strip{
+   width: 100%;
+   background-color: gainsboro;
+   color: gray;
+   font-size: small;
+   margin: 0px;
+   padding: 0px;
+}
+.to-strip{
+    padding: 0px;
+}
+
+.to-stripbtn{
+
+}

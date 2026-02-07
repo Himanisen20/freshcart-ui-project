@@ -1,0 +1,198 @@
+/* main footer wrap */
+.fc-footer {
+  background: #c7c5c5;
+  padding: 2.5rem 1.5rem 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+}
+
+/* ========== top multi column ========== */
+.fc-footer-top {
+  max-width: 1200px;
+  margin: 0 auto 1.8rem auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.fc-footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.fc-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fc-footer-col li {
+  font-size: 0.86rem;
+  color: #4b5563;
+  margin-bottom: 0.28rem;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+/* green hover for links */
+.fc-footer-col li:hover {
+  color: #16a34a;
+}
+
+/* ========== middle stripe ========== */
+.fc-footer-middle {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+  padding: 1rem 0 1.1rem;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fc-middle-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-right: 0.6rem;
+}
+
+.fc-payment-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.fc-payment-logos span {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+/* center text */
+.fc-delivery-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* app buttons */
+.fc-app-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fc-store-btn {
+  border: 1px solid #111827;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.fc-store-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+/* ========== bottom section ========== */
+.fc-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.fc-copy {
+  margin: 0;
+}
+
+.fc-highlight {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* social icons */
+.fc-social {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fc-social-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.fc-social-icon:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+/* ========== responsive ========== */
+@media (max-width: 1024px) {
+  .fc-footer-top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .fc-footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fc-footer-middle {
+    align-items: flex-start;
+  }
+
+  .fc-delivery-text {
+    order: -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .fc-footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .fc-footer-middle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fc-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

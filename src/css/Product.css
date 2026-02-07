@@ -1,0 +1,269 @@
+
+
+.pd-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 16px 40px 40px;
+  box-sizing: border-box;
+}
+
+/* breadcrumb */
+.pd-breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pd-bc-link {
+  cursor: pointer;
+  color: #099309;
+}
+
+/* main white card */
+.pd-main-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  background: #ffffff;
+}
+
+/* LEFT: big image + thumbs */
+
+.pd-left {
+  flex: 0 0 380px;
+  max-width: 100%;
+}
+
+.pd-main-img {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.pd-main-img img {
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.pd-thumb-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pd-thumb-item {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 6px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pd-thumb-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.pd-thumb-active {
+  border-color: #099309;
+  background: #ecfdf3;
+}
+
+/* RIGHT: product info */
+
+.pd-right {
+  flex: 1;
+  min-width: 260px;
+  padding-left: 30px;
+}
+
+.pd-cat-text {
+  font-size: 20px;
+  color: #099309;
+  margin: 0 0 4px;
+
+}
+
+.pd-title {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pd-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.pd-stars {
+  color: #f59e0b;
+}
+
+.pd-rating-num {
+  font-weight: 500;
+}
+
+/* price row */
+.pd-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pd-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pd-old-price {
+  font-size: 15px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.pd-discount {
+  font-size: 14px;
+  color: #099309;
+  font-weight: 600;
+}
+
+/* size buttons */
+.pd-size-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.pd-size-btn {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 6px 14px;
+  background: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pd-size-btn-active {
+  border-color: #099309;
+  background: #ecfdf3;
+}
+
+/* qty + cart buttons */
+.pd-qty-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pd-qty-box {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  overflow: hidden;
+}
+
+.pd-qty-box button {
+  border: none;
+  background: #f3f4f6;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pd-qty-box span {
+  min-width: 32px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pd-add-cart {
+  border: none;
+  background: #099309;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pd-round-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* bottom info rows */
+.pd-info-grid {
+  margin-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px 24px;
+  font-size: 13px;
+}
+
+.pd-info-row {
+  display: flex;
+  gap: 6px;
+}
+
+.pd-info-label {
+  color: #6b7280;
+  min-width: 100px;
+}
+
+.pd-info-value {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .pd-page {
+    padding: 16px 16px 32px;
+  }
+  .pd-main-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pd-main-card {
+    flex-direction: column;
+  }
+  .pd-left {
+    flex: 1 1 100%;
+  }
+}

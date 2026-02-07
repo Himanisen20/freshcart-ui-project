@@ -1,0 +1,9 @@
+.status{
+    border: 1px solid rgb(172, 170, 170);
+    padding:7px ;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.status:focus{
+    border: 2px solid #0aad0a;
+}

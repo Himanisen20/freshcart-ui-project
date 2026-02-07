@@ -1,0 +1,182 @@
+/* ===== RESET-ish ===== */
+* {
+  box-sizing: border-box;
+}
+
+.header-wrapper {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ===== LOGO ===== */
+.header-logo img {
+  height: 32px;
+  cursor: pointer;
+}
+
+/* ===== SEARCH ===== */
+.header-search {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.header-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+/* ===== LOCATION ===== */
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ===== ICONS ===== */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+}
+
+.icon-box:hover {
+  background: #f9fafb;
+}
+
+/* ===== MOBILE PANEL ===== */
+.mobile-panel {
+  display: none;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+.mobile-panel.open {
+  display: block;
+}
+
+/* ===== MOBILE SEARCH ===== */
+.mobile-search-inline {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mobile-search-inline input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* ===== MOBILE ICONS ===== */
+.mobile-icons-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ========================= */
+/* ===== RESPONSIVE ===== */
+/* ========================= */
+
+/* ---- Tablets ---- */
+@media (max-width: 992px) {
+  .header-search {
+    max-width: 360px;
+  }
+
+  .location-btn span {
+    display: none;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 14px;
+  }
+
+  /* hide desktop search */
+  /* .header-search {
+    display: none;
+  } */
+
+  /* hide desktop icons */
+  
+
+  /* hide location */
+  .location-btn {
+    display: none;
+  }
+
+  .header-logo img {
+    height: 28px;
+  }
+}
+
+/* ---- Small Mobile ---- */
+@media (max-width: 480px) {
+  .header-logo img {
+    height: 26px;
+  }
+
+  .mobile-panel {
+    padding: 12px;
+  }
+}

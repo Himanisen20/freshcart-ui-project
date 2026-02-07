@@ -1,0 +1,113 @@
+
+
+.account-container {
+  min-height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.account-card {
+  background: #ffffff;
+  width: 100%;          /* FULL WIDTH */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.account-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+hr {
+  margin: 25px 0;
+}
+
+.delete-section {
+  text-align: center;
+}
+
+.delete-section h3 {
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.delete-section p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.delete-section input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  width: 100%;
+  padding: 12px;
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background: #a93226;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .account-card {
+    padding: 20px;
+  }
+}
