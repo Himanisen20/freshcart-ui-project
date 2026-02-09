@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bell, User, Edit, Trash } from "lucide-react";
+import { Bell, User, Edit, Trash, SprayCanIcon } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/PageProduct.css";
@@ -168,25 +168,34 @@ export default function Category() {
             <div key={p._id} className="card">
               <div className="card-top">
                 <img
-                  src={`http://localhost:8080${p.image}`}
+                  src={p.image}
                   alt={p.title}
                 />
                 <div>
-                  <h3>{p.title}</h3>
-                  <p>{p.category}</p>
+                  <h3>{p.name}</h3>
+                  <p>
+                      {/* {categoryfilter.length} */}
+                       {
+                        products.filter(
+                          product => product.category === p.name
+                        ).length
+                      }
+                    </p>
                 </div>
               </div>
 
               <div className="card-bottom">
-                <span>₹{p.price}</span>
-                <span
-                  className={`status ${p.status === "Available"
-                      ? "available"
-                      : "unavailable"
-                    }`}
-                >
-                  {p.status}
-                </span>
+                
+                <span className="actions">
+                      <button className="edit-btn"
+                        onClick={() => editpage(p)}>
+                        <Edit size={18} /> Edit
+                      </button>
+                      <button className="removebtn"
+                        onClick={() => removebtn(p)}>
+                        <Trash size={18} /> Delete
+                      </button>
+                    </span>
               </div>
             </div>
           ))}

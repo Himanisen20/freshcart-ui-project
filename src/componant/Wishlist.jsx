@@ -70,33 +70,35 @@ const Wishlist = () => {
       </header>
 
       <div className="wishlist-container">
-        {wishItems.map((item) => (
-          <div className="wishlist-item" key={item.id}>
+        { 
+        wishItems.map((items) => (
+          <div className="wishlist-item" key={items._id}>
 
             <img
-              src={item.image}
-              alt={item.title}
+              src={items.image}
+              alt={items.title}
               className="wishlist-image"
             />
 
             <div className="wishlist-details">
-              <h2>{item.title}</h2>
-              <p className="price">Price: ${item.price}</p>
-              <p className="weight">Weight: {item.weight}</p>
+              <h2>{items.title}</h2>
+              <p className="price">Price: ${items.price}</p>
+              <p className="weight">Weight: {items.weight}</p>
             </div>
 
            <div className="btn">
              <button className="cart-btn"
-              onClick={() => addcart(item)}>
+              onClick={() => addcart(items)}>
                  <ShoppingCart size={18} /></button>
               
             <button className="remove-btn"
-              onClick={() => removebtn(item)}>
+              onClick={() => removebtn(items)}>
                  <Trash size={18} /></button>
            </div>
 
           </div>
-        ))}
+        ))
+        }
       </div>
 
     </div>

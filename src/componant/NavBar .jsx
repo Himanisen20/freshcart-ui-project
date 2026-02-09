@@ -24,7 +24,7 @@ export default function NavBar() {
           </button>
 
           {/* Departments dropdown */}
-          <div className= {`departments-menu ${isDeptOpen ? "open" : ""}`}>
+          <div className = {`departments-menu ${isDeptOpen ? "open" : ""}`}>
             <ul>
               <li>Dairy, Bread &amp; Eggs</li>
               <li>Snacks &amp; Munchies</li>
