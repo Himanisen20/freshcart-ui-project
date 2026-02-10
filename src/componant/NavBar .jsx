@@ -116,7 +116,7 @@ export default function NavBar() {
             <div className="nav-dropdown">
               <ul>
                 <Link to="/login"><li>Sign in</li></Link>
-                <Link to="/signup"><li>Sign in</li></Link>
+                <Link to="/signup"><li>Sign up</li></Link>
                 <Link to="/resetpass"><li>Forget password</li></Link>
                 <Link to="/myaccount"><li>My Account</li></Link>
 

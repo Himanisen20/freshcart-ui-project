@@ -48,6 +48,9 @@
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+.form-group input:focus {
+  border-color: var(--green-main);
+}
 
 /* BUTTON */
 .save-btn {
