@@ -18,13 +18,13 @@ export default function NavBar() {
         {/* LEFT: All Departments */}
         <div className="departments">
           <button className="departments-btn"
-         onClick={() => setIsDeptOpen((prev) => !prev)} >
+            onClick={() => setIsDeptOpen((prev) => !prev)} >
             <span className="departments-icon">☰</span>
             <span>All Departments</span>
           </button>
 
           {/* Departments dropdown */}
-          <div className = {`departments-menu ${isDeptOpen ? "open" : ""}`}>
+          <div className={`departments-menu ${isDeptOpen ? "open" : ""}`}>
             <ul>
               <li>Dairy, Bread &amp; Eggs</li>
               <li>Snacks &amp; Munchies</li>
@@ -115,10 +115,10 @@ export default function NavBar() {
             </NavLink>
             <div className="nav-dropdown">
               <ul>
-                <Link to="/login"><li>Sign in</li></Link>
-                <Link to="/signup"><li>Sign up</li></Link>
-                <Link to="/resetpass"><li>Forget password</li></Link>
-                <Link to="/myaccount"><li>My Account</li></Link>
+                <li><Link to="/login">Sign in</Link></li>
+                <li><Link to="/signup">Sign up</Link></li>
+                <li><Link to="/resetpass">Forget password</Link></li>
+                <li><Link to="/myaccount">My Account</Link></li>
 
               </ul>
             </div>
