@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../css/productdeatil.css";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Heart } from "lucide-react";
+import { Heart} from "lucide-react";
 import Header from "./Header";
 
 
@@ -174,8 +174,8 @@ useEffect(() => {
               onClick={() => addcart(product)}>Add to Cart</button>
 
             <div className="icon-box" style={{ padding: 10 }}>
-              <Heart size={18} onClick={() => wishlist(product)} />
-              <span style={{ marginLeft: 8 }}>Wishlist</span>
+              <Heart size={18} onClick={() => wishlist(product)}/>
+             
             </div>
           </div>
  </div>
