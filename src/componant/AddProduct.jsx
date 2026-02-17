@@ -75,7 +75,7 @@ export default function AddProduct() {
       {/* Header Row */}
       <DashNav/>
       <div className="main">
-         <nav className="navbar">
+         <nav className="navbar" id="dashtop-nav">
         <h2 className="logo">MyStore</h2>
 
         <input
@@ -90,180 +90,170 @@ export default function AddProduct() {
         </div>
       </nav>
 
-      <div className="flex justify-between items-center mb-8 top">
-        <h1 className="text-2xl text-green-800 font-semibold">Add Product</h1>
+       <div className="page-header">
+      <h1 className="page-title">Add Product</h1>
 
-        <Link to="/ProductPage">
-          <button className="back">
-            <ArrowLeft size={18} /> Back to Products
-          </button>
-        </Link>
-      </div>
+      <Link to="/ProductPage">
+        <button className="btn back-btn">
+          <ArrowLeft size={18} /> Back to Products
+        </button>
+      </Link>
+    </div>
 
-    
-      {/* CONTENT GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-gray-100 info">
-          
-        {/* LEFT SIDE */}
-        <div className="lg:col-span-2 space-y-6">
+    {/* CONTENT GRID */}
+    <div className="content-grid">
+      
+      {/* LEFT SIDE */}
+      <div className="left-section">
 
-          {/* Product Information */}
-          <div className=" p-6 bg-white rounded-lg shadow info ">
-            <h2 className="text-lg font-semibold mb-4">Product Information</h2>
+        {/* Product Information */}
+        <div className="card">
+          <h2 className="card-title">Product Information</h2>
 
-            
-            <div className=" product-info">
-              {/* Title */}
-              <div className="inputs">
-                <label className="font-medium">Product Title</label>
-                <input
-                  type="text"
-                  className="w-full mt-1 p-2 border rounded  "
-                  placeholder="Enter product title"
-                  name="title"
-                  onChange={inputvalue}
-                  required/>
-              </div>
-
-              {/* Category */}
-              <div className="inputs">
-                <label className="font-medium">Product Category</label>
-                <select className="w-full mt-1 p-4 border rounded "
-                  name="category"
-                  onChange={inputvalue}
-                 required>
-                  <option>Select Category</option>
-                  {category.map((c) => (
-                    <option key={c._id} value={c.name}>
-                      {c.name}
-                    </option>
-                  ))}
-
-                </select>
-              </div>
-
-              {/* Product Code */}
-              <div className="inputs">
-                <label className="font-medium">Product Code</label>
-                <input
-                  type="text"
-                  className="w-full mt-1 p-2 border rounded"
-                  placeholder="#000123"
-                  name="code"
-                  onChange={inputvalue}
-                 required/>
-              </div>
-            </div>
-          </div>
-
-          {/* Product Images */}
-          <div className="bg-white p-6 rounded-lg shadow info">
-            <h2 className="text-lg font-semibold mb-4">Product Images</h2>
-
-            <label className=" bg-gray-100 w-full p-10 flex flex-col justify-center items-center cursor-pointer text-gray-600">
+          <div className="form-grid">
+            {/* Title */}
+            <div className="form-group">
+              <label>Product Title</label>
               <input
                 type="text"
-                className="w-full mt-1 p-2 border rounded"
-                placeholder="image path"
-                name="image"
+                placeholder="Enter product title"
+                name="title"
                 onChange={inputvalue}
-              required />
-            </label>
+                required
+              />
+            </div>
+
+            {/* Category */}
+            <div className="form-group">
+              <label>Product Category</label>
+              <select
+                name="category"
+                onChange={inputvalue}
+                required
+              >
+                <option value="">Select Category</option>
+                {category.map((c) => (
+                  <option key={c._id} value={c.name}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Product Code */}
+            <div className="form-group">
+              <label>Product Code</label>
+              <input
+                type="text"
+                placeholder="#000123"
+                name="code"
+                onChange={inputvalue}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Product Images & Description */}
+        <div className="card">
+          <h2 className="card-title">Product Images</h2>
+
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Image path"
+              name="image"
+              onChange={inputvalue}
+              required
+            />
           </div>
 
-          {/* Description */}
-          <div className="bg-white p-6 rounded-lg shadow info">
-            <h2 className="text-lg font-semibold mb-4">Product Description</h2>
+          <h2 className="card-title">Product Description</h2>
 
+          <div className="form-group">
             <textarea
               rows={5}
-              className="w-full border rounded p-3"
               placeholder="Write product description here..."
-              name="discription"
+              name="description"
               onChange={inputvalue}
-            required ></textarea>
+              required
+            ></textarea>
           </div>
         </div>
-
-        {/* RIGHT SIDE */}
-        <div className="space-y-6">
-
-          {/* Status */}
-          <div className="bg-white p-6 rounded-lg shadow info">
-            <h2 className="text-lg font-semibold mb-4">Status</h2>
-
-            <div className="space-y-2">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="status"
-                  value="active"
-                  checked={status === "active"}
-                  onChange={() => setStatus("active")}
-                />
-                Active
-              </label>
-
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="status"
-                  value="disabled"
-                  checked={status === "disabled"}
-                  onChange={() => setStatus("disabled")}
-                />
-                Disabled
-              </label>
-            </div>
-          </div>
-
-          {/* Product Price */}
-          <div className="bg-white p-6 rounded-lg shadow info ">
-            <h2 className="text-lg font-semibold mb-4">Product Price</h2>
-
-            <div className="space-y-4">
-              <div>
-                <label className="font-medium">weight</label>
-                <input
-                  type="text"
-                  className="w-full mt-1 p-2 border rounded"
-                  placeholder="$0.00"
-                  name="weight"
-                  onChange={inputvalue}
-                 required/>
-              </div>
-
-              <div>
-                <label className="font-medium">Sale Price</label>
-                <input
-                  type="number"
-                  className="w-full mt-1 p-2 border rounded"
-                  placeholder="$0.00"
-                  name="price"
-                  onChange={inputvalue}
-                 required/>
-              </div>
-            </div>
-          </div>
-
-          {/* Submit */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <button className="w-full bg-blue-600 hover:bg-blue-700
-             text-white py-2 rounded-md font-semibold"
-              onClick={addbtn}>
-              Done
-            </button>
-
-            <button className="w-full mt-3 text-white py-2 rounded-md hover:bg-gray-100">
-              Cancel
-            </button>
-          </div>
-        </div>
-
-        
       </div>
-  
-      
+
+      {/* RIGHT SIDE */}
+      <div className="right-section">
+
+        {/* Status */}
+        <div className="card">
+          <h2 className="card-title">Status</h2>
+
+          <div className="radio-group">
+            <label>
+              <input
+                type="radio"
+                name="status"
+                value="active"
+                checked={status === "active"}
+                onChange={() => setStatus("active")}
+              />
+              Active
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="status"
+                value="disabled"
+                checked={status === "disabled"}
+                onChange={() => setStatus("disabled")}
+              />
+              Disabled
+            </label>
+          </div>
+        </div>
+
+        {/* Product Price */}
+        <div className="card">
+          <h2 className="card-title">Product Price</h2>
+
+          <div className="form-group">
+            <label>Weight</label>
+            <input
+              type="text"
+              placeholder="Enter weight"
+              name="weight"
+              onChange={inputvalue}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Sale Price</label>
+            <input
+              type="number"
+              placeholder="$0.00"
+              name="price"
+              onChange={inputvalue}
+              required
+            />
+          </div>
+        </div>
+
+        {/* Buttons */}
+        <div className="button-group">
+          <button className="btn primary-btn" onClick={addbtn}>
+            Done
+          </button>
+
+          <button className="btn secondary-btn">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+    </div>
     </div>
     </div>
   );

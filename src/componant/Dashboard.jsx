@@ -16,7 +16,7 @@ function Dashboard() {
       <main className="main">
 
         {/* ---- Top Bar ---- */}
-       <nav className="navbar">
+       <nav className="navbar" id="dashtop-nav">
         <h2 className="logo">MyStore</h2>
 
         <input

@@ -19,19 +19,18 @@ function DashNav() {
 
         <Link to="/Dashboard">
         <li className="active">
-            <FaHome />
-         <span>Dashboard</span>
+            <FaHome /><span>Dashboard</span>
          </li>
           </Link>
 
         <p className="menu-title">Store Managements</p>
 
-        <div className="nav-item">
+       
           <Link to="/productpage" >
             <li className="dahs" >
               <FaBox /><span>Products</span></li>
           </Link>
-        </div>
+       
 
         <Link to="/category">
           <li><FaTags />
@@ -43,7 +42,7 @@ function DashNav() {
         <span>Orders</span></li>
         </Link>
 
-        <li><FaUsers /><span>Sellers / Vendors</span></li>
+       
 
         <Link to="/customer">
           <li><FaUsers />

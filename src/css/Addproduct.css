@@ -1,3 +1,6 @@
+/* ===============================
+   ROOT COLORS
+=================================*/
 :root {
   --btn-bg: rgb(195, 245, 149);
   --green-main: #03b903;
@@ -10,220 +13,232 @@
   --text-color: rgb(73, 73, 73);
 }
 
-/* GLOBAL */
+/* ===============================
+   GLOBAL
+=================================*/
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-body);
-  color: var(--text-color);
   margin: 0;
-  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background:white;
 }
 
-.home.dashboard-layout {
+.home {
   display: flex;
+  min-height: 100vh;
 }
 
 .main {
   flex: 1;
-  padding: 20px 40px;
+  padding: 20px 30px;
+  animation: fadeIn 0.6s ease;
 }
 
-/* NAVBAR */
-.navbar {
+
+/* ===============================
+   PAGE HEADER
+=================================*/
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 30px;*/
-} 
-
-.logo {
-  color: var(--heading);
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin-bottom: 25px;
 }
 
-.search-input {
-  padding: 8px 12px;
+.page-title {
+  color: var(--heading);
+  margin: 0;
+}
+
+.back-btn {
+  background: white;
   border: 1px solid var(--border-color);
-  border-radius: 5px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: var(--green-main);
-  box-shadow: 0 0 5px var(--green-main);
-}
-
-.nav-icons {
-  display: flex;
-  gap: 15px;
-}
-
-/* TOP HEADER */
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.top h1 {
-  color: var(--green-dark);
-}
-
-.back {
-  background-color: var(--btn-bg);
-  color: var(--green-dark);
-  padding: 8px 15px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  padding: 8px 14px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: none;
+  transition: 0.3s ease;
 }
 
-.back:hover {
+.back-btn:hover {
+  background: var(--btn-bg);
   transform: translateY(-2px);
-   background-color: var(--btn-bg);
-  color: var(--green-dark);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* CONTENT GRID */
-.grid.info {
+/* ===============================
+   GRID LAYOUT
+=================================*/
+.content-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
 }
 
-@media(min-width: 1024px) {
-  .grid.info {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* CARD STYLING */
-.bg-white {
-  background-color: #fff;
+/* ===============================
+   CARDS
+=================================*/
+.card {
+  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: 0.3s ease;
+  animation: slideUp 0.5s ease;
 }
 
-.bg-white:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-h2 {
+.card-title {
+  margin-bottom: 15px;
   color: var(--heading);
 }
 
-.inputs {
+/* ===============================
+   FORM STYLES
+=================================*/
+.form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
 
-.inputs label {
-  font-weight: 500;
-  margin-bottom: 5px;
+.form-group label {
+  margin-bottom: 6px;
+  color: var(--text-color);
+  font-size: 14px;
 }
 
-.inputs input,
-.inputs select,
+input,
+select,
 textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
   border: 1px solid var(--border-color);
-  border-radius: 5px;
-  padding: 8px 12px;
-  outline: none;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
-.inputs input:focus,
-.inputs select:focus,
+input:focus,
+select:focus,
 textarea:focus {
+  outline: none;
   border-color: var(--green-main);
-  box-shadow: 0 0 5px var(--green-main);
+  box-shadow: 0 0 0 3px rgba(3, 185, 3, 0.1);
 }
 
-/* TEXTAREA */
-textarea {
-  resize: vertical;
+/* ===============================
+   RADIO GROUP
+=================================*/
+.radio-group {
+  display: flex;
+  gap: 20px;
+  color: var(--text-color);
 }
 
-/* STATUS RADIO */
-input[type="radio"] {
-  accent-color: var(--green-main);
+/* ===============================
+   BUTTONS
+=================================*/
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-/* SUBMIT BUTTONS */
-button {
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-button:hover {
+.primary-btn {
+  background: var(--btn-bg);
+  color: var(--green-dark);
+}
+
+.primary-btn:hover {
+  background: var(--green-main);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-button.bg-blue-600 {
-  background-color: var(--green-main);
-  color: #fff;
-  font-weight: 600;
+.secondary-btn {
+  background: white;
+  border: 1px solid var(--border-color);
 }
 
-button.bg-blue-600:hover {
-  background-color: var(--green-dark);
+.secondary-btn:hover {
+  background: var(--remove-btn);
+  color: white;
+  border-color: var(--remove-btn);
 }
 
-button.cancel {
-  background-color: var(--remove-btn);
-  color: #fff;
-}
-
-button.cancel:hover {
-  background-color: #b91c1c;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media(max-width: 1024px) {
-  .main {
-    padding: 15px 20px;
+/* ===============================
+   ANIMATIONS
+=================================*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  .grid.info {
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .content-grid {
     grid-template-columns: 1fr;
   }
+
+  .search-input {
+    width: 60%;
+  }
 }
 
-@media(max-width: 768px) {
-  .top {
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .page-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
-  .back {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
     width: 100%;
-    justify-content: center;
-  }
-}
-
-@media(max-width: 480px) {
-  .inputs input,
-  .inputs select,
-  textarea {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 10px;
   }
 }

@@ -15,7 +15,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
 
   const product = state?.product;
-  const allProducts = state?.allProducts || [];
+   const allProducts = state?.allProducts || [];
 
   let inputvalue=(e)=>{
     setReview({...review,[e.target.name]:e.target.value})

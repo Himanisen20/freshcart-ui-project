@@ -48,7 +48,7 @@ export default function Reviewpage() {
 
       <DashNav/>
       <div className="main">
-      <nav className="navbar">
+      <nav className="navbar" id="dashtop-nav">
         <h2 className="logo">MyStore</h2>
 
         <input

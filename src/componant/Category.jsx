@@ -76,7 +76,7 @@ export default function Category() {
 
       <DashNav />
       <div className="main">
-        <nav className="navbar">
+        <nav className="navbar" id="dashtop-nav">
           <h2 className="logo">Category</h2>
 
           <input
@@ -93,7 +93,7 @@ export default function Category() {
 
         {/* HEADER */}
         <div className="page-header">
-          <h2>Products</h2>
+          <h2>Category</h2>
           <Link to="/addcategory">
             <button className="add-btn">ADD Category</button>
           </Link>

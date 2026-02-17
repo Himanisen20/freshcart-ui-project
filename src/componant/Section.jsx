@@ -1,32 +1,34 @@
 import React from "react";
-import "../css/promo.css";
+import "../css/section.css";
 
 function Section() {
-  const promos = [
-    {
-      title: "Fruits & Vegetables",
-      offer: "Get Upto 30% Off",
-      img: "https://freshcart.codescandy.com/assets/images/banner/banner-deal.jpg",
-    },
-    {
-      title: "Freshly Baked Buns",
-      offer: "Get Upto 25% Off",
-      img: "https://freshcart.codescandy.com/assets/images/banner/menu-banner.jpg",
-    },
-  ];
+ 
 
   return (
+    <div className="promo-main">
     <div className="promo-container">
-      {promos.map((item, i) => (
-        <div key={i} className="promo-card">
+     
+        <div  className="promo-card">
           <div className="promo-content">
-            <h2>{item.title}</h2>
-            <p>{item.offer}</p>
+            <h2>Freshly Baked Buns</h2>
+            <p>Get Upto 25% Off</p>
             <button className="promo-btn">Shop Now</button>
           </div>
-          <img src={item.img} alt={item.title} className="promo-img" />
+          <img src="https://freshcart-next-js.vercel.app/images/banner/grocery-banner-2.jpg"  
+          alt="image" className="promo-img" />
         </div>
-      ))}
+
+         <div  className="promo-card">
+          <div className="promo-content">
+            <h2>Fruits & Vegetables</h2>
+            <p>Get Upto 30% Off</p>
+            <button className="promo-btn">Shop Now</button>
+          </div>
+          <img src="https://freshcart-next-js.vercel.app/images/banner/grocery-banner.png"
+           alt="image" className="promo-img" />
+        </div>
+     
+    </div>
     </div>
   );
 }

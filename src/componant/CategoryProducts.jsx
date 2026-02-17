@@ -1,56 +1,61 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../css/categoryproduct.css";
+import "../css/categoryProduct.css"
 
 const CategoryProducts = () => {
-  const { categoryId } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
 
+  const category = location.state?.category;
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/products-by-category/${categoryId}`)
+    if (!category) {
+      navigate("/");
+      return;
+    }
+
+    axios.get("http://localhost:8080/products")
       .then((res) => {
         if (res.data.status) {
-          setProducts(res.data.products);
+          setProducts(res.data.allproducts);
         }
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [categoryId]);
+      });
+  }, []);
 
-  if (loading) {
-    return <div className="loading">Loading products...</div>;
-  }
+  if (!category) return null;
+
+  const filteredProducts = products.filter(
+    (p) => p.category === category.name
+  );
 
   return (
-    <div className="category-page">
-      <button className="back-btn" onClick={() => navigate(-1)}>
-        ← Back
-      </button>
+    <div className="category-container">
+      <h2 className="category-title">{category.name}</h2>
 
-      <h2 className="page-title">Category Products</h2>
-
-      <div className="products-grid">
-        {products.length === 0 ? (
-          <p>No products found</p>
-        ) : (
-          products.map((p) => (
+      {filteredProducts.length === 0 ? (
+        <p className="no-products">No products found</p>
+      ) : (
+        <div className="products-grid">
+          {filteredProducts.map((item, index) => (
             <div
+              key={item._id}
               className="product-card"
-              key={p._id}
-              onClick={() => navigate(`/product/${p._id}`)}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <img src={p.image} alt={p.name} />
-              <h3>{p.name}</h3>
-              <p>₹{p.price}</p>
+              <div className="image-wrapper">
+                <img src={item.image} alt={item.title} />
+              </div>
+
+              <div className="product-info">
+                <h4>{item.title}</h4>
+                <p className="price">₹{item.price}</p>
+              </div>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

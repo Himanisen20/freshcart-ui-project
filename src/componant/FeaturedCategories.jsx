@@ -64,7 +64,13 @@ const FeatureCategory = () => {
               <div
                 className="category-card"
                 key={p._id}
-                onClick={() => navigate(`/categorycard/${p._id}`)}
+                onClick={() =>
+                  navigate("/categorycard" , {
+                    state:
+                     {category:p},
+                  })
+                }
+
               >
                 <div className="image-box">
                   <img src={p.image || "/placeholder.png"} alt={p.name} />
