@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import NavBar from "./NavBar ";
 import { NavLink } from "react-router-dom";
-import AuthPage from "./AuthPage";
+
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

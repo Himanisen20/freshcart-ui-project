@@ -1,7 +1,7 @@
 // src/PopularProducts.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/PopularProducts.css";
+import "../css/popularProducts.css";
 import axios from "axios";
 
 const PopularProducts = () => {

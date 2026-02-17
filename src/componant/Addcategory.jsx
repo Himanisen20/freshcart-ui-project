@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowLeft, Upload } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import '../css/AddProduct.css'
+import '../css/Addproduct.css'
 import axios from "axios";
 import Swal from "sweetalert2";
 import DashNav from "./Dashnav";

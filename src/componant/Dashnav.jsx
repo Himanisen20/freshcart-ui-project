@@ -3,7 +3,7 @@ import "../css/dashboard.css";
 import { NavLink, Link } from "react-router-dom";
 
 import {
-  FaSearch, FaBell, FaUserCircle, FaHome, FaBox, FaTags,
+   FaHome, FaBox, FaTags,
   FaShoppingBag, FaUsers, FaStar, FaBars
 } from "react-icons/fa";
 

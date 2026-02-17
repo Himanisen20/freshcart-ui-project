@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../css/FeaturedCategories.css";
+import "../css/featuredCategories.css";
 
 const VISIBLE_CARDS = 4;
 const CARD_WIDTH = 270; // card width + gap
