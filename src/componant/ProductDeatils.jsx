@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "../css/Productdeatil.css.css";
+import "../css/Productdeatil.css";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Heart} from "lucide-react";
