@@ -13,7 +13,7 @@ export default function Reviewpage() {
   
 
  useEffect(() => {
-    axios.get("http://localhost:8080/getreview") // <-- your API
+    axios.get("https://freshcart-backend-one.vercel.app/getreview") // <-- your API
       .then((res) => {
         if (res.data.status) {
           setReview(res.data.allreview); // API should return array
@@ -30,7 +30,7 @@ export default function Reviewpage() {
 
    let removebtn = (data) => {
        console.log(data)
-       axios.post("http://localhost:8080/removereview", { data }).then((res) => {
+       axios.post("https://freshcart-backend-one.vercel.app/removereview", { data }).then((res) => {
          if (res.data.status) {
            Swal.fire({
              title: "Remove it!",

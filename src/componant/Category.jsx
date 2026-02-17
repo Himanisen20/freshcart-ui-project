@@ -23,7 +23,7 @@ export default function Category() {
 // 🔹 Fetch Products
   useEffect(() => {
     axios
-      .get("http://localhost:8080/products")
+      .get("https://freshcart-backend-one.vercel.app/products")
       .then((res) => {
         if (res.data.status) {
           setProducts(res.data.allproducts);
@@ -35,7 +35,7 @@ export default function Category() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/getcategory")
+      .get("https://freshcart-backend-one.vercel.app/getcategory")
       .then((res) => {
         if (res.data.status) {
           setCategory(res.data.allcategory);
@@ -49,7 +49,7 @@ export default function Category() {
   }, []);
 
   let removebtn = (data) => {
-    axios.post("http://localhost:8080/removecategory", { data }).then((res) => {
+    axios.post("https://freshcart-backend-one.vercel.app/removecategory", { data }).then((res) => {
       if (res.data.status) {
         Swal.fire({
           title: "Remove it!",

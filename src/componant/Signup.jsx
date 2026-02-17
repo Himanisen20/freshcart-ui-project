@@ -25,7 +25,7 @@ import Swal from "sweetalert2";
     }
 
   if (signup.password === signup.cpassword) {
-            axios.post("http://localhost:8080/signup", {signup})
+            axios.post("https://freshcart-backend-one.vercel.app/signup", {signup})
             .then((res) => {
               if (res.data.status) {
                 Swal.fire({
