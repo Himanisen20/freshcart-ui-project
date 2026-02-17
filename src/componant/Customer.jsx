@@ -6,7 +6,8 @@ import "../css/PageProduct.css";
 import Swal from "sweetalert2";
 import "../css/dashboard.css";
 import DashNav from "./Dashnav";
-export default function ProductPage() {
+
+export default function CustomerList() {
   const [customer, setCustomer] = useState([]);
   const [loading, setLoading] = useState(true);
 

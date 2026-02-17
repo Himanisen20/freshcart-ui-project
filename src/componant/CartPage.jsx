@@ -46,7 +46,7 @@ function CartPage() {
             prev.filter((cart) => cart._id !== item._id)
           );
         }
-      });
+      });   window.location.reload()
   };
 
   // Increment quantity

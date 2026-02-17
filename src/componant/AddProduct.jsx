@@ -54,7 +54,7 @@ export default function AddProduct() {
     } catch (error) {
       console.error(error);
     }
-  }}
+  } window.location.reload()}
   useEffect(() => {
     axios.get("http://localhost:8080/getcategory")
       .then((res) => {

@@ -8,11 +8,12 @@
   justify-content: center;
   align-items: flex-start;
   padding: 40px 16px;
-  background-image: url("https://images.pexels.com/photos/3850671/pexels-photo-3850671.jpeg");
+  background-image: url("https://img.freepik.com/free-photo/top-view-fresh-vegetable-composition-inside-plate-light-white-background_140725-76642.jpg?semt=ais_hybrid&w=740&q=80");
   /* TODO: yaha apni background image ka link lagao */
-  background-size: cover;
-  background-position: center;
+  background-size:cover;
+  background-position:center;
   background-repeat: no-repeat;
+  
 }
 
 .cart-wrapper {
