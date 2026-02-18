@@ -50,11 +50,14 @@ export default function AddProduct() {
 
         });
       })
-
+       window.location.reload()
+       
     } catch (error) {
       console.error(error);
     }
-  } window.location.reload()}
+  }
+}
+
   useEffect(() => {
     axios.get("https://freshcart-backend-one.vercel.app/getcategory")
       .then((res) => {
@@ -174,7 +177,7 @@ export default function AddProduct() {
             <textarea
               rows={5}
               placeholder="Write product description here..."
-              name="description"
+              name="discription"
               onChange={inputvalue}
               required
             ></textarea>

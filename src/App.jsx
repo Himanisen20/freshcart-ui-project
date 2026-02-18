@@ -31,15 +31,16 @@ import Checkout from "./componant/Checkoutpage";
 import AddressForm from "./componant/Address";
 import OrderList from "./componant/OrderList";
 import OrderSingle from "./componant/OrderSingle";
+import Footer from "./componant/Footer";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <NavLink />
-        </nav>
+        </nav> */}
 
         <Routes>
           <Route path="/" element={<Home/>} />
@@ -70,7 +71,7 @@ function App() {
           
         </Routes>
       </BrowserRouter>
-      <Footer />
+      <Footer/>
     </>
   );
 }
