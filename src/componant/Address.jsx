@@ -17,7 +17,7 @@ export default function AddressForm({ onSave }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://freshcart-backend-one.vercel.app/addAddress",
+    axios.post("http://localhost:8080/addAddress",
       { formData }).then((res) => {
         if (res.data.status) {
           Swal.fire({

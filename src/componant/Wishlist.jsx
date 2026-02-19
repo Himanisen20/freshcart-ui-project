@@ -12,7 +12,7 @@ const Wishlist = () => {
 
   useEffect(() => {
 
-    axios.get("https://freshcart-backend-one.vercel.app/wishlistdata") // <-- your API
+    axios.get("http://localhost:8080/wishlistdata") // <-- your API
       .then((res) => {
         if (res.data.status) {
           setwishitem(res.data.allproducts); // API should return array
@@ -29,7 +29,7 @@ const Wishlist = () => {
   //addtocart......
   const addcart = (cart) => {
     console.log(cart)
-    axios.post("https://freshcart-backend-one.vercel.app/addcart", { cart })
+    axios.post("http://localhost:8080/addcart", { cart })
       .then((res) => {
         if (res.data.status) {
           Swal.fire({
@@ -50,7 +50,7 @@ const Wishlist = () => {
 
   let removebtn = (data) => {
     console.log(data)
-    axios.post("https://freshcart-backend-one.vercel.app/removewish", { data }).then((res) => {
+    axios.post("http://localhost:8080/removewish", { data }).then((res) => {
       if (res.data.status) {
         Swal.fire({
           title: "Remove it!",

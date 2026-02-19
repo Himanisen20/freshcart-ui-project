@@ -28,7 +28,7 @@ let addbtn = async (e) => {
             return;
     }
     else{
-     axios.post("https://freshcart-backend-one.vercel.app/addCategory", { addcategory})
+     axios.post("http://localhost:8080/addCategory", { addcategory})
     .then((res) => {
             if (res.data.status) {
               Swal.fire({

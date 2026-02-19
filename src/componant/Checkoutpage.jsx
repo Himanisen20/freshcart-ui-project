@@ -16,7 +16,7 @@ export default function Checkout() {
   /* ================= GET CART ITEMS ================= */
   useEffect(() => {
     axios
-      .get("https://freshcart-backend-one.vercel.app/addcartlist")
+      .get("http://localhost:8080/addcartlist")
       .then((res) => {
         if (res.data.status) {
           const normalizedItems = res.data.allcartitem.map((item) => ({
@@ -37,7 +37,7 @@ export default function Checkout() {
   /* ================= GET ADDRESS ================= */
   useEffect(() => {
     axios
-      .get("https://freshcart-backend-one.vercel.app/getaddress")
+      .get("http://localhost:8080/getaddress")
       .then((res) => {
         if (res.data.status) {
           setAddresses(res.data.alldata);
@@ -124,7 +124,7 @@ export default function Checkout() {
   //edit address 
   let editpage = (data) => {
     console.log(data)
-    axios.post("https://freshcart-backend-one.vercel.app/editAddress", { data })
+    axios.post("http://localhost:8080/editAddress", { data })
       .then((res) => {
         if (res.data.status) {
           Swal.fire({ title: "update product!", icon: "success" });
@@ -134,7 +134,7 @@ export default function Checkout() {
 
   /* ================= REMOVE ADDRESS ================= */
   const removebtn = (data) => {
-    axios.post("https://freshcart-backend-one.vercel.app/removeaddress", { data }).then((res) => {
+    axios.post("http://localhost:8080/removeaddress", { data }).then((res) => {
       if (res.data.status) {
         Swal.fire({ title: "Removed!", icon: "success" });
       }
@@ -149,7 +149,7 @@ export default function Checkout() {
     Swal.fire({ title: "Select payment mode!", icon: "warning" });
     return;
   }
-    axios.post("https://freshcart-backend-one.vercel.app/createOrder", {
+    axios.post("http://localhost:8080/createOrder", {
       allitem,
       address: selectedAddress,
       totalAmount,

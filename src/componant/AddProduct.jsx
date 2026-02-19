@@ -32,7 +32,7 @@ export default function AddProduct() {
     }else{
     try {
       const res = await axios.post(
-        "https://freshcart-backend-one.vercel.app/addproduct",
+        "http://localhost:8080/addproduct",
         { addproduct }
       ).then((res) => {
         if (res.data.status) {
@@ -51,7 +51,7 @@ export default function AddProduct() {
         });
       })
        window.location.reload()
-       
+
     } catch (error) {
       console.error(error);
     }
@@ -59,7 +59,7 @@ export default function AddProduct() {
 }
 
   useEffect(() => {
-    axios.get("https://freshcart-backend-one.vercel.app/getcategory")
+    axios.get("http://localhost:8080/getcategory")
       .then((res) => {
         if (res.data.status) {
           setCategory(res.data.allcategory);

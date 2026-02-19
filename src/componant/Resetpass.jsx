@@ -16,7 +16,7 @@ const ResetPassword = () => {
   e.preventDefault();
 
   if (reset.password === reset.cpassword) {
-    axios.post("https://freshcart-backend-one.vercel.app/resetpassword", {
+    axios.post("http://localhost:8080/resetpassword", {
       email: reset.email,
       password: reset.password
     })

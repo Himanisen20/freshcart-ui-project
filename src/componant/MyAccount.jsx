@@ -22,7 +22,7 @@ const MyAccount = () => {
   
   
     useEffect(() => {
-      axios.get("https://freshcart-backend-one.vercel.app/customerlist") // <-- your API
+      axios.get("http://localhost:8080/customerlist") // <-- your API
         .then((res) => {
           if (res.data.status) {
             setallusers(res.data.allcustomer); // API should return array
@@ -55,7 +55,7 @@ const MyAccount = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    axios.post("https://freshcart-backend-one.vercel.app/updatecustomer",{formData}).then((res)=>{
+    axios.post("http://localhost:8080/updatecustomer",{formData}).then((res)=>{
       if (res.data.status) {
              Swal.fire({
                title: "update user detail!",
@@ -69,7 +69,7 @@ const MyAccount = () => {
 
  const handleDelete = () => {
   axios
-    .post("https://freshcart-backend-one.vercel.app/deleteuser", { email: formData.deleteEmail,})
+    .post("http://localhost:8080/deleteuser", { email: formData.deleteEmail,})
     .then((res) => {
       if (res.data.status) {
         Swal.fire({

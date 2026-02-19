@@ -15,7 +15,7 @@ const FeatureCategory = () => {
 
   useEffect(() => {
     axios
-      .get("https://freshcart-backend-one.vercel.app/getcategory")
+      .get("http://localhost:8080/getcategory")
       .then((res) => {
         if (res.data.status) {
           setCategory(res.data.allcategory);

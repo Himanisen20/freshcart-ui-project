@@ -20,7 +20,7 @@ export default function EditProduct() {
   }
   
   let updateproduct=()=>{
-      axios.post("https://freshcart-backend-one.vercel.app/updateproduct",{edit}).then((res) => {
+      axios.post("http://localhost:8080/updateproduct",{edit}).then((res) => {
                if (res.data.status) {
                  Swal.fire({
                    title:"update product!",
@@ -32,7 +32,7 @@ export default function EditProduct() {
      }
 
       useEffect(() => {
-         axios.get("https://freshcart-backend-one.vercel.app/getcategory")
+         axios.get("http://localhost:8080/getcategory")
            .then((res) => {
              if (res.data.status) {
                setCategory(res.data.allcategory);

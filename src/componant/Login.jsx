@@ -30,7 +30,7 @@ export default function Login() {
     return;
   }
     
-    axios.post("https://freshcart-backend-one.vercel.app/login", {login})
+    axios.post("http://localhost:8080/login", {login})
    .then((res) => {
       if (res.data.status) {
         Swal.fire({

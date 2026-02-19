@@ -4,7 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 
- function Signup() {
+function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -16,41 +16,35 @@ import Swal from "sweetalert2";
 
   console.log(signup);
 
-  const signupbtn = async(e) => {
-     e.preventDefault();
+  const signupbtn = async (e) => {
+    e.preventDefault();
 
+    // 1️⃣ Check empty fields
     if (!signup.fullname || !signup.email || !signup.password || !signup.cpassword) {
       Swal.fire("Error", "All fields are required", "warning");
       return;
     }
 
-  if (signup.password === signup.cpassword) {
-            axios.post("https://freshcart-backend-one.vercel.app/signup", {signup})
-            .then((res) => {
-              if (res.data.status) {
-                Swal.fire({
-                  title: "signup successfull!",
-                  text: "You clicked the button!",
-                  icon: "success"
-                });
-              }
-            }).catch(() => {
-              Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-               
-              });
-            })
-          }else{
-             Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Password not match!",
-          }
-             )
-  };
-}
+    // 2️⃣ Check password match
+    if (signup.password !== signup.cpassword) {
+      Swal.fire("Error", "Password not match!", "error");
+      return;
+    }
+
+    // 3️⃣ API call
+    const res = await axios.post("http://localhost:8080/signup", { signup }).then((res) => {
+      if (res.data.status) {
+        Swal.fire({
+          title: "Signup successful!",
+          icon: "success",
+        });
+      } else {
+        Swal.fire("Error", res.data.message || "Signup failed!", "error");
+      }
+    })
+  }
+
+
 
 
   return (
@@ -59,7 +53,7 @@ import Swal from "sweetalert2";
 
         <h2 className="text-3xl font-bold text-green-800 text-center mb-6">Create Account</h2>
 
-        <form className="space-y-5">
+        <form className="space-y-5" >
 
           <div className="inputfield">
             <label className="block text-gray-700 font-medium mb-1">Full Name</label>
@@ -94,7 +88,7 @@ import Swal from "sweetalert2";
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-2.5 cursor-pointer"
               >
-               <i className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                <i className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
               </span>
             </div>
           </div>
@@ -112,7 +106,7 @@ import Swal from "sweetalert2";
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="absolute right-3 top-2.5 cursor-pointer"
               >
-              <i className={`fa-solid ${showConfirmPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                <i className={`fa-solid ${showConfirmPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
               </span>
             </div>
           </div>

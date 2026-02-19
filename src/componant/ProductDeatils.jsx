@@ -39,7 +39,7 @@ const ProductDetails = () => {
   //addtocart......
   const addcart = (cart) => {
     console.log(cart)
-    axios.post("https://freshcart-backend-one.vercel.app/addcart", { cart })
+    axios.post("http://localhost:8080/addcart", { cart })
       .then((res) => {
         if (res.data.status) {
           Swal.fire({
@@ -60,7 +60,7 @@ const ProductDetails = () => {
 
   const wishlist = (wish) => {
     console.log(wish)
-    axios.post("https://freshcart-backend-one.vercel.app/wishlist", { wish })
+    axios.post("http://localhost:8080/wishlist", { wish })
       .then((res) => {
         if (res.data.status) {
           Swal.fire({
@@ -92,7 +92,7 @@ const ProductDetails = () => {
   //review API
   const reviewbtn=(e)=>{
     e.preventDefault();
-       axios.post("https://freshcart-backend-one.vercel.app/Review", {review,productId: product._id,})
+       axios.post("http://localhost:8080/Review", {review,productId: product._id,})
        .then((res) => {
                if (res.data.status) {
                  Swal.fire({
@@ -112,7 +112,7 @@ const ProductDetails = () => {
 
   //get review 
 useEffect(() => {
-    axios.get("https://freshcart-backend-one.vercel.app/getreview") // <-- your API
+    axios.get("http://localhost:8080/getreview") // <-- your API
       .then((res) => {
         if (res.data.status) {
           setshowreview(res.data.allreview); // API should return array

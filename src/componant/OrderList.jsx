@@ -23,7 +23,7 @@ export default function OrderList() {
 
   useEffect(() => {
     axios
-      .get("https://freshcart-backend-one.vercel.app/getOrderBill")
+      .get("http://localhost:8080/getOrderBill")
       .then((res) => {
         if (res.data.status) {
           setData(res.data.alldata);
@@ -38,7 +38,7 @@ export default function OrderList() {
 
   let removebtn = (data) => {
 
-    axios.post("https://freshcart-backend-one.vercel.app/removeitem", { data }).then((res) => {
+    axios.post("http://localhost:8080/removeitem", { data }).then((res) => {
       if (res.data.status) {
         Swal.fire({
           title: "Remove it!",
