@@ -12,7 +12,7 @@ const PopularProducts = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/products") // <-- your API
+    axios.get("https://freshcart-backend-one.vercel.app/products") // <-- your API
       .then((res) => {
         if (res.data.status) {
           setProducts(res.data.allproducts); // API should return array

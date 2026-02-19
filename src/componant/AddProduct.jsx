@@ -32,7 +32,7 @@ export default function AddProduct() {
     }else{
     try {
       const res = await axios.post(
-        "http://localhost:8080/addproduct",
+        "https://freshcart-backend-one.vercel.app/addproduct",
         { addproduct }
       ).then((res) => {
         if (res.data.status) {
@@ -59,7 +59,7 @@ export default function AddProduct() {
 }
 
   useEffect(() => {
-    axios.get("http://localhost:8080/getcategory")
+    axios.get("https://freshcart-backend-one.vercel.app/getcategory")
       .then((res) => {
         if (res.data.status) {
           setCategory(res.data.allcategory);

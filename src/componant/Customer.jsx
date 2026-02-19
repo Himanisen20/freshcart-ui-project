@@ -13,7 +13,7 @@ export default function CustomerList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/customerlist")
+      .get("https://freshcart-backend-one.vercel.app/customerlist")
       .then((res) => {
         if (res.data.status) {
           setCustomer(res.data.allcustomer);
@@ -28,7 +28,7 @@ export default function CustomerList() {
 
    let removebtn = (data) => {
        console.log(data)
-       axios.post("http://localhost:8080/removeitem", { data }).then((res) => {
+       axios.post("https://freshcart-backend-one.vercel.app/removeitem", { data }).then((res) => {
          if (res.data.status) {
            Swal.fire({
              title: "Remove it!",

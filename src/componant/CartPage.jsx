@@ -11,7 +11,7 @@ function CartPage() {
 
   // Fetch cart items
  useEffect(() => {
-  axios.get("http://localhost:8080/addcartlist")
+  axios.get("https://freshcart-backend-one.vercel.app/addcartlist")
     .then((res) => {
       if (res.data.status) {
         const normalizedCart = res.data.allcartitem.map((item) => ({
@@ -33,7 +33,7 @@ function CartPage() {
   // Remove item
   const removebtn = (item) => {
     axios
-      .post("http://localhost:8080/removecart", { data: item })
+      .post("https://freshcart-backend-one.vercel.app/removecart", { data: item })
       .then((res) => {
         if (res.data.status) {
           Swal.fire({

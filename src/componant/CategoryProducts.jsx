@@ -16,7 +16,7 @@ const CategoryProducts = () => {
       return;
     }
 
-    axios.get("http://localhost:8080/products")
+    axios.get("https://freshcart-backend-one.vercel.app/products")
       .then((res) => {
         if (res.data.status) {
           setProducts(res.data.allproducts);

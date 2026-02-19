@@ -32,7 +32,7 @@ function Signup() {
     }
 
     // 3️⃣ API call
-    const res = await axios.post("http://localhost:8080/signup", { signup }).then((res) => {
+    const res = await axios.post("https://freshcart-backend-one.vercel.app/signup", { signup }).then((res) => {
       if (res.data.status) {
         Swal.fire({
           title: "Signup successful!",
