@@ -39,6 +39,7 @@ export default function ProductPage() {
          }
    
        })
+       window.location.reload();
      }
 
      let go =useNavigate();
