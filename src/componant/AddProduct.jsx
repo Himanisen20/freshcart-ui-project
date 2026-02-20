@@ -101,7 +101,7 @@ export default function AddProduct() {
           <ArrowLeft size={18} /> Back to Products
         </button>
       </Link>
-    </div>
+     </div>
 
     {/* CONTENT GRID */}
     <div className="content-grid">

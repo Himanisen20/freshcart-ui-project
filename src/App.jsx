@@ -32,6 +32,7 @@ import AddressForm from "./componant/Address";
 import OrderList from "./componant/OrderList";
 import OrderSingle from "./componant/OrderSingle";
 import Footer from "./componant/Footer";
+import EditCategory from "./componant/EditCategory";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
           <Route path="/Address" element={<AddressForm/>} />
           <Route path="/orderlist" element={<OrderList/>} />
           <Route path="/ordersingle" element={<OrderSingle/>} />
+          <Route path="/editcategory" element={<EditCategory/>} />
 
           
         </Routes>

@@ -34,6 +34,7 @@ export default function AddressForm({ onSave }) {
 
         });
       })
+      window.location.reload();
   }
 
   return (

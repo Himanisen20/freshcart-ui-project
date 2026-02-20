@@ -61,12 +61,10 @@ export default function Category() {
     })
   }
 
-  
-
   let go = useNavigate();
 
   let editpage = (data) => {
-    go("/EditProduct", { state: data })
+    go("/editcategory", { state: data })
 
   }
 

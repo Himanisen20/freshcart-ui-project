@@ -51,135 +51,119 @@ let addbtn = async (e) => {
 
 
   return (
-    <div className=" home dashboard-layout">
-      {/* Header Row */}
+    <div className="dashboard-layout home">
+      <DashNav />
 
-      <DashNav/>
       <div className="main">
-          <nav className="navbar" id="dashtop-nav">
-        <h2 className="logo">MyStore</h2>
+        {/* Top Navbar */}
+        <nav className="navbar" id="dashtop-nav">
+          <h2 className="logo">MyStore</h2>
 
-        <input
-          type="text"
-          placeholder="Search Product..."
-          className="search-input"
-        />
+          <input
+            type="text"
+            placeholder="Search Product..."
+            className="search-input"
+          />
 
-        <div className="nav-icons">
-          <Bell />
-          <User />
+          <div className="nav-icons">
+            <Bell />
+            <User />
+          </div>
+        </nav>
+
+        {/* Header */}
+        <div className="page-header">
+          <h1 className="page-title">Add Category</h1>
+
+          <Link to="/category">
+            <button className="back-btn btn">
+              <ArrowLeft size={18} /> Back to category page
+            </button>
+          </Link>
         </div>
-      </nav>
-      <div className="flex justify-between items-center mb-8 top">
-        <h1 className="text-2xl font-semibold text-green-800">Add Category</h1>
 
-        <Link to="/category">
-          <button className="back">
-            <ArrowLeft size={18} /> Back to category page
-          </button>
-        </Link>
-      </div>
+        {/* Content Section */}
+        <div className="content-grid">
+          {/* LEFT SIDE */}
+          <div className="left-section">
+            <div className="card">
+              <h2 className="card-title">Category Information</h2>
 
-
-      {/* CONTENT GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-gray-100 info">
-
-        {/* LEFT SIDE */}
-        <div className="lg:col-span-2 space-y-6">
-
-          {/* Product Information */}
-          <div className=" p-6 bg-white rounded-lg shadow info ">
-            <h2 className="text-lg font-semibold mb-4">Category Information</h2>
-
-            <div className="space-y-4">
-
-                  {/* Product Images */}
-              <div >
-                <label className="font-medium label">Image</label>
+              <div className="form-group">
+                <label>Image</label>
                 <input
                   type="text"
-                  className="w-full mt-1 p-2 border rounded focus:ring focus:ring-blue-300"
-                  placeholder="Enter product title"
+                  placeholder="Enter image"
                   name="image"
                   onChange={inputvalue}
-                required/>
-              </div>
-              {/* Title */}
-              <div>
-                <label className="font-medium label">Category</label>
-                <input
-                  type="text"
-                  className="w-full mt-1 p-2 border rounded focus:ring focus:ring-blue-300"
-                  placeholder="Enter product title"
-                  name="name"
-                  onChange={inputvalue}
-                 required/>
+                  required
+                />
               </div>
 
-              {/* Product Code */}
-              <div>
-                <label className="font-medium">Product</label>
+              <div className="form-group">
+                <label>Category</label>
+                <input
+                  type="text"
+                  placeholder="Enter Category name"
+                  name="name"
+                  onChange={inputvalue}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Product</label>
                 <input
                   type="number"
-                  className="w-full mt-1 p-2 border rounded"
                   placeholder="#000123"
                   name="product"
                   onChange={inputvalue}
-                 required/>
+                  required
+                />
               </div>
             </div>
           </div>
 
+          {/* RIGHT SIDE */}
+          <div className="right-section">
+            <div className="card">
+              <h2 className="card-title">Status</h2>
 
-        {/* RIGHT SIDE */}
-        <div className="space-y-6">
+              <div className="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="status"
+                    value="active"
+                    checked={status === "active"}
+                    onChange={() => setStatus("active")}
+                  />
+                  Active
+                </label>
 
-          {/* Status */}
-          <div className="bg-white p-6 rounded-lg shadow info">
-            <h2 className="text-lg font-semibold mb-4">Status</h2>
+                <label>
+                  <input
+                    type="radio"
+                    name="status"
+                    value="disabled"
+                    checked={status === "disabled"}
+                    onChange={() => setStatus("disabled")}
+                  />
+                  Disabled
+                </label>
+              </div>
+            </div>
 
-            <div className="space-y-2">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="status"
-                  value="active"
-                  checked={status === "active"}
-                  onChange={() => setStatus("active")}
-                />
-                Active
-              </label>
+            <div className="button-group">
+              <button className=" btn primary-btn" onClick={addbtn}>
+                Done
+              </button>
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="status"
-                  value="disabled"
-                  checked={status === "disabled"}
-                  onChange={() => setStatus("disabled")}
-                />
-                Disabled
-              </label>
+              <button className=" btn secondary-btn">Cancel</button>
             </div>
           </div>
-
-
-          {/* Submit */}
-          <div className="bg-white p-6 rounded-lg shadow">
-            <button className="w-full bg-blue-600 hover:bg-blue-700
-             text-white py-2 rounded-md font-semibold"
-             onClick={addbtn}>
-              Done
-            </button>
-
-            <button className="w-full mt-3 text-white py-2 rounded-md hover:bg-gray-100">
-              Cancel
-            </button>
-          </div>
-        </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

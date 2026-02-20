@@ -8,9 +8,10 @@
 .address-form-container {
   max-width: 700px;
   margin: 20px auto;
-  background: #ffffff;
+  background: #f6fdf6;
   padding: 18px;
   border-radius: 8px;
+  box-shadow: 2px 2px 5px gray;
 }
 
 .address-form-container h2{
