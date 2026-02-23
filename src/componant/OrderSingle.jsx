@@ -4,10 +4,15 @@ import "../css/OrderSingle.css";
 import "../css/dashboard.css";
 import DashNav from "./Dashnav";
 import { useLocation, useNavigate } from "react-router-dom";
+import { usePDF } from 'react-to-pdf';
 
 export default function OrderSingle() {
   const { state } = useLocation();
   const navigate = useNavigate();
+
+  let fullfilename=state.address.firstname+state.address.lastname
+  // pdf -------------------
+  const { toPDF, targetRef } = usePDF({filename:`${fullfilename} freshcart bill` });
 
   if (!state) {
     return (
@@ -55,7 +60,7 @@ export default function OrderSingle() {
         </div>
 
         {/* CARD */}
-        <div className="order-card">
+        <div className="order-card" ref={targetRef}>
           {/* TOP */}
           <div className="order-top">
             <h3>
@@ -64,7 +69,7 @@ export default function OrderSingle() {
             </h3>
 
             <div className="order-actions">
-              <button className="btn-gray">Download Invoice</button>
+              <button className="btn-gray"  onClick={() => toPDF()}>Download Invoice</button>
             </div>
           </div>
 
@@ -144,6 +149,9 @@ export default function OrderSingle() {
             </div>
           </div>
         </div>
+
+
+
       </div>
     </div>
   );

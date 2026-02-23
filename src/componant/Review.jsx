@@ -12,7 +12,8 @@ export default function Reviewpage() {
   const [loading, setLoading] = useState(true);
   
 
- useEffect(() => {
+ useEffect((e) => {
+   e.preventDefault();
     axios.get("https://freshcart-backend-one.vercel.app/getreview") // <-- your API
       .then((res) => {
         if (res.data.status) {

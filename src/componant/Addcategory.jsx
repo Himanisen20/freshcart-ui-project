@@ -46,7 +46,7 @@ let addbtn = async (e) => {
             });
           })
         }
-
+        Window.location.reload();
   }
 
 
